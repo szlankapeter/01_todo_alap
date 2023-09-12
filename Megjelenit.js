@@ -4,7 +4,7 @@ class Megjelenit {
     #lista = {};
     constructor(tarolo, lista) {
         this.#lista = lista;
-        tarolo.html('<table class="table table-bordered table-striped">')
+        tarolo.html('<table class="table table-hover">')
         this.tablaElem = tarolo.children("table");
         this.tablazatbaIr();
     }
