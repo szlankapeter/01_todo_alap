@@ -1,14 +1,22 @@
+import Elem from "./Elem.js";
 
 class Megjelenit {
-
+    #lista = {};
     constructor(tarolo, lista) {
-        this.tarolo = tarolo;
-        let txt = `<table class="table table-hover">`;
-        for(let i=0;i<lista.length;i++){
-            txt += `<tr><td scope="col">${lista[i].tevekenyseg}</td><td>${lista[i].hatarido}</td></tr>`;
-        }
-        tarolo.append(txt);
+        this.#lista = lista;
+        tarolo.html('<table class="table table-bordered table-striped">')
+        this.tablaElem = tarolo.children("table");
+        this.tablazatbaIr();
     }
+
+
+    tablazatbaIr() {
+        this.#lista.forEach((elem) => {
+            const sor = new Elem(elem, this.tablaElem);
+        });
+    }
+
+
 
 
 } export default Megjelenit;
